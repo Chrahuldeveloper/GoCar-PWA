@@ -1,25 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import Home from "../src/pages/Home";
+import "./App.css";
+import { Routes, Route } from "react-router-dom";
+import ViewCars from "./pages/ViewCars";
+import SpareParts from "./pages/SpareParts";
+import Cart from "./pages/Cart";
+import CarInsurance from "./pages/CarInsurance";
+import UserAccount from "./pages/UserAccount";
+import UserPage from "./pages/UserPage";
+import Details from "./pages/Details";
+import MyCar from "./pages/MyCar";
+export default function App() {
+  const [ismobile, setismobile] = useState(false);
 
-function App() {
+  useEffect(() => {
+    if (window.innerWidth < 600) {
+      setismobile(true);
+    }
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {ismobile ? (
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/car" element={<ViewCars />} />
+          <Route path="/details" element={<Details />} />
+          <Route path="/buyparts" element={<SpareParts />} />
+          <Route path="/insurance" element={<CarInsurance />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/createaccount" element={<UserAccount />} />
+          <Route path="/User" element={<UserPage />} />
+          <Route path="/mycar" element={<MyCar />} />
+        </Routes>
+      ) : (
+        <>
+          <h1>This is not a valid Screen</h1>
+        </>
+      )}
+    </>
   );
 }
-
-export default App;
