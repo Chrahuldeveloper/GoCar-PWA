@@ -17,7 +17,7 @@ export default function Navbar({
   return (
     <nav className="bg-[#22252d] shadow-xl py-2.5">
       <div className="flex justify-between p-3">
-        <div className="flex space-x-6 items-center">
+        <div className="flex items-center space-x-6">
           <AiOutlineMenu
             onClick={() => {
               setisshow(!isshow);
@@ -27,8 +27,8 @@ export default function Navbar({
             cursor={"pointer"}
           />
           <Link to={"/"}>
-            <h1 className="text-2xl text-white font-bold">
-              <span className="text-yellow-500">Go</span>Car
+            <h1 className="text-2xl font-bold text-white">
+              <span className="text-yellow-500">Auto</span>Vertex
             </h1>
           </Link>
         </div>
@@ -56,7 +56,7 @@ export default function Navbar({
         </div>
       </div>
       {Search ? (
-        <div className="flex justify-center pl-8 items-center my-3">
+        <div className="flex items-center justify-center pl-8 my-3">
           <input
             type="text"
             className="p-3 outline-none rounded-lg w-[100vw]"
@@ -67,7 +67,7 @@ export default function Navbar({
             }}
           />
           <HiOutlineMagnifyingGlass
-            className="bg-yellow-500 p-3 -translate-x-10 rounded-r-lg"
+            className="p-3 -translate-x-10 bg-yellow-500 rounded-r-lg"
             size={48}
             color="white"
             cursor={"pointer"}

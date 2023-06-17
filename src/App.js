@@ -10,6 +10,7 @@ import UserAccount from "./pages/UserAccount";
 import UserPage from "./pages/UserPage";
 import Details from "./pages/Details";
 import MyCar from "./pages/MyCar";
+import Problems from "./pages/Problems";
 export default function App() {
   const [ismobile, setismobile] = useState(false);
 
@@ -32,6 +33,7 @@ export default function App() {
           <Route path="/createaccount" element={<UserAccount />} />
           <Route path="/User" element={<UserPage />} />
           <Route path="/mycar" element={<MyCar />} />
+          <Route path="/problem" element={<Problems />} />
         </Routes>
       ) : (
         <>

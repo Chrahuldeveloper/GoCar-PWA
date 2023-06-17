@@ -14,11 +14,11 @@ export default function Sidebar({ isshow, setisshow }) {
       animate={{ opacity: 1, transition: { duration: 0.5 } }}
       exit={{ opacity: 1 }}
       key={Math.random() * 100}
-      className="fixed bg-black bg-opacity-75 w-screen h-screen left-0 top-0 z-50"
+      className="fixed top-0 left-0 z-50 w-screen h-screen bg-black bg-opacity-75"
     >
-      <div className="max-w-[70vw] sm:max-w-[50vw]  h-screen bg-[#22252d] z-50">
-        <div className="flex justify-between items-center px-2">
-          <h1 className="text-2xl font-semibold text-yellow-500 px-3 py-5 brightness-90">
+      <div className="max-w-[55vw] sm:max-w-[50vw]  h-screen bg-[#22252d] z-50">
+        <div className="flex items-center justify-between px-2">
+          <h1 className="px-3 py-5 text-2xl font-semibold text-yellow-500 brightness-90">
             Welcome
           </h1>
           <RxCross2
@@ -37,26 +37,35 @@ export default function Sidebar({ isshow, setisshow }) {
               <li>Home</li>
             </div>
           </Link>
-          <div className="flex items-center space-x-4  cursor-pointer">
+          <div className="flex items-center space-x-4 cursor-pointer">
             <FcAbout size={25} color="white" />
             <li>About Us</li>
           </div>
-          <div className="flex items-center space-x-4  cursor-pointer">
+          <div className="flex items-center space-x-4 cursor-pointer">
             <FiPhoneCall size={25} color="white" />
             <li>Contact Us</li>
           </div>
           <div>
             <Link
-              className="flex items-center space-x-4  cursor-pointer"
+              className="flex items-center space-x-4 cursor-pointer"
               to={"/mycar"}
             >
               <AiFillCar size={25} color="white" />
               <li>My Car</li>
             </Link>
           </div>
-          <div className="flex items-center space-x-4  cursor-pointer">
+          <div className="flex items-center space-x-4 cursor-pointer">
             <TbHeartHandshake size={25} color="white" />
-            <li>Become a Member</li>
+            <li>Member Club</li>
+          </div>
+          <div>
+            <Link
+              className="flex items-center space-x-4 cursor-pointer"
+              to={"/problem"}
+            >
+              <TbHeartHandshake size={25} color="white" />
+              <li>Problems</li>
+            </Link>
           </div>
         </ul>
       </div>
